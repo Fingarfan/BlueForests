@@ -5,8 +5,8 @@ library(readxl)
 library(bnlearn)
 
 set.seed(123)
-#Calling Data
 
+#Calling Data
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 kelp_data <- read_excel("DATASET.xlsx", sheet = "Design_1")
 View(kelp_data)
