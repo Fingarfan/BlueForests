@@ -230,7 +230,7 @@ for (i in 1:nrow(parent_combinations)) {
   probs_combined <- probs_as * probs_ba * probs_bt * probs_ee * probs_gr * probs_id * probs_temp * probs_turb
   
   
-  # Normalizes the probabilities to sum up to 1 across "Good Kelp", "Average Kelp", and "Low Kelp"
+  #Normalizes the probabilities to sum up to 1 across "Good Kelp", "Average Kelp", and "Low Kelp"
   probs_normalized <- probs_combined / sum(probs_combined)
   
   #Assigns the normalized probabilities to the corresponding column in the CPT matrix
