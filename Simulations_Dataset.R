@@ -267,6 +267,5 @@ for (simulation_index in 1:100) {
 }
 
 
-# Exporting Dataframes ----------------------------------------------------
-# Save the Dataframes environment to a file
+#Exporting Dataframes ----------------------------------------------------
 save(Simul_F_DATA, file = "Simul_F_DATA.RData")
