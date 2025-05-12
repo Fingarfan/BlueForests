@@ -6,7 +6,7 @@ You should open the file "run_this.R" and follow the instructions there.
 - The section on dependencies should be run the first time you use this code. Afterwards, it should no longer be needed. Attempting to do it multiple times will result in issues using this file.
 - Afterwards, you should run each "source" individually to avoid issues. Should any issue arise with the implementation of the code, you can run the R files in the order described in the "run_this.R" file.
 ,
-For a smooth experience, we recommend you implement this code on a computer with 32gb of RAM. 
+For a smooth experience, we recommend you implement this code on a computer with at least 32gb of RAM. 
 
-If you have any questions relative to the code, please email the authors. 
+If you have any questions about the code, please email the authors. 
 
