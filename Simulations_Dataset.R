@@ -4,7 +4,7 @@ library(dplyr)
 library(readxl)
 library(bnlearn)
 
-set.seed(123)
+set.seed(42)
 
 #Calling Data
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
