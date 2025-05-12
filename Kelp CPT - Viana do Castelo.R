@@ -158,7 +158,7 @@ Health.Ben <- matrix(c(0.693333333, 0.406666667, 0.12,
 
 #####################################################################
 ##########################SECTION 2 - Setup##########################
-#In this section we assume conditional independence between nodes ###
+##In this section we assume conditional independence between nodes###
 #This allows us to easily estimate the probability of Seagrass|nodes#
 #####################################################################
 
