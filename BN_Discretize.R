@@ -4,7 +4,6 @@ rm(list = ls()) #Clearing the environment
 library(bnlearn)
 library(readxl)
 
-
 #Setting up data --------------------------------------------------------------
 #Calling Data (Requires that the excel file 
 #be located in the same folder as the code)
