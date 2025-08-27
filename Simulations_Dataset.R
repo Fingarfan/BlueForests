@@ -52,23 +52,36 @@ combined_simul_datasets <- lapply(simul_datasets, function(simul_var) {
 })
 
 
-# Kolmogorov-Smirnov test, Q-Q plots for each variable
-ks_test_results <- vector("list", length = n_variables)
-qq_plots <- vector("list", length = n_variables)
+# Define variable names
+variable_names <- c("Kelp Indicator", "Grazers", "Mean Fetch", "Turbidity", "Temperature", "Upwelling")
 
-#Plot the Q-Q tests with 2 rows and 4 columns
-par(mfrow = c(1, 1))
+# Kolmogorov-Smirnov test, Q-Q plots for each variable
+(mfrow = c(1, 1))
 
 for (variable_index in 1:n_variables) {
   original_var <- BN_data2[, variable_index]
   combined_new_var <- combined_simul_datasets[[variable_index]]
-  
   ks_test_results[[variable_index]] <- ks.test(original_var, combined_new_var)
-  
   qq_plots[[variable_index]] <- qqplot(original_var, combined_new_var, 
-                                       xlab = paste("Original Variable", variable_index), 
-                                       ylab = paste("Simulated Variable", variable_index),
-                                       main = paste("Q-Q Plot - Variable", variable_index))
+                                       xlab = paste("Original", variable_names[variable_index]), 
+                                       ylab = paste("Simulated", variable_names[variable_index]),
+                                       main = paste("Q-Q Plot:", variable_names[variable_index]),
+                                       pch = 21,           
+                                       cex = 0.7,          
+                                       col = "navy",       
+                                       bg = alpha("steelblue", 0.6),  
+                                       font.main = 2,      
+                                       font.lab = 2,       
+                                       cex.main = 1.2,     
+                                       cex.lab = 1.1,      
+                                       cex.axis = 0.9,     
+                                       las = 1)            
+  
+  abline(a = 0, b = 1, col = "red3", lwd = 2.5, lty = 2)
+  grid(col = "lightgray", lty = 3, lwd = 0.5)
+  points(qq_plots[[variable_index]]$x, qq_plots[[variable_index]]$y,
+         pch = 21, cex = 0.7, col = "navy", bg = alpha("steelblue", 0.6))
+  abline(a = 0, b = 1, col = "red3", lwd = 2.5, lty = 2)
 }
 
 #DATA REARRANGING ---------------------------------------------------------
@@ -269,3 +282,4 @@ for (simulation_index in 1:100) {
 
 #Exporting Dataframes ----------------------------------------------------
 save(Simul_F_DATA, file = "Simul_F_DATA.RData")
+
